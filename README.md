@@ -1,44 +1,77 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+# React16.8 + typescript + egg + mongoose 图书管理软件
 
-In the project directory, you can run:
+本文旨在学习 *node.js* 和 运用 react16.8 Hooks 版本搭建简易图书管理 *webapp*  
+起先应该会是 demo，但是力求精进  
+本项目开源，如您有缘路过，希望可以给个小星星哇 ~~~  
+欢迎各位朋友大家一起来开发，提 PR, 提 issue 哦
 
-### `yarn start`
+### 技术选型
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+前端框架：React16.8 [create-react-app] + typescript  
+后端框架：egg.js  
+数据库：mongoose  
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+## 用户
 
-### `yarn test`
+* 游客
+  * 查看最新书籍推荐
+  * 写趣味书评
+  * 点赞
+  * 收藏
+* 企业普通用户（可多个项目）
+  * 发起采购申请
+  * 查看采购进度
+* 企业管理员
+  * 创建组织
+  * 采购录入
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## 基本功能
 
-### `yarn build`
+* [ ] 好书推荐（navigation homePage）
+  * [ ] 主要推荐近期好书
+  * [ ] 系统内已经录入的借用比较多的书
+  * [ ] 添加图书
+* [ ] 我的图书（navigation）
+* [ ] 用户中心（navigation）
+  * [ ] 推荐图书
+  * [ ] 我的书评
+  * [ ] 我收藏的书
+  * [ ] 加入组织，如企业，咖啡书屋等
+  * [ ] 切换组织
+* [ ] 趣味书评
+* [ ] 企业功能：
+  * [ ] 租借图书
+  * [ ] 归还图书
+  * [ ] 查看自己已经借阅过图书
+  * [ ] 采购申请
+  * [ ] 租借到期预警
+  * [ ] 录入企业图书库
+    * [ ] 采购时间
+    * [ ] 允许租借时长
+    * [ ] 书籍分类
+  * [ ] 核销
+* [ ] 登录 / 注册
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## 期待技术实现
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+* [ ] 前后端分离
+* [ ] JWT身份认证
+* [ ] 骨架屏
+* [ ] 全功能使用 React Hooks 开发
+* [ ] egg.js 提供接口
+* [ ] PC、移动端适配
+* [ ] 一键换肤(常规模式、暗夜模式)
+* [ ] 懒加载
+* [ ] 异步加载
+* [ ] 前后端分离
+* [ ] 引入 tslint
+* [ ] 长列表优化
+* [ ] 性能优化
+  * [ ] 图片压缩合并
+  * [ ] 浏览器缓存
+  * [ ] Http 缓存优化
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## 作者
 
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+zo11o
