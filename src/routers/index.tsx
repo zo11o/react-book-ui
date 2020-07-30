@@ -1,29 +1,7 @@
-import React, { SFC, ComponentType } from "react";
-import { BrowserRouter as Router, Route, Link, Switch, NavLink } from "react-router-dom";
-import UserCenter from '../view/uc'
+import React, { SFC, ComponentType, Component } from "react";
+import { BrowserRouter as Router, Route, Redirect, Link, Switch, NavLink } from "react-router-dom";
+import Layout from '../components/layout'
 
-interface IRoute {
-  path: string;
-  component: React.ReactElement;
-}
-
-interface ILocation {
-  match: {
-    params: object
-    isExact: boolean
-    path: string
-    url: string
-  },
-  location: {
-    key?: string // 在使用 hashHistory 时，没有 key
-    pathname: string
-    search: string
-    hash?: string
-    // state: {
-    //   [userDefined]: true
-    // }
-  }
-}
 
 export const withDefaultProps = <
   P extends object,
@@ -78,42 +56,6 @@ export const withDefaultProps = <
 //   />
 // );
 
-
-
-function Layout () {
-
-  return (
-    <div className="layout">
-      <div className="layout-body">
-          <Switch>
-            <Route path="/book">
-              <Home />
-            </Route>
-            <Route path="/about">
-              <About />
-            </Route>
-            <Route path="/uc">
-              <UserCenter />
-            </Route>
-          </Switch>
-      </div>
-      <nav className="layout-nav">
-        <ul>
-          <li>
-            <NavLink to="/book" activeClassName='selected'>首页</NavLink>
-          </li>
-          <li>
-            <NavLink to="/about" activeClassName='selected'>记录</NavLink>
-          </li>
-          <li>
-            <NavLink to="/uc" activeClassName='selected'>用户中心</NavLink>
-          </li>
-        </ul>
-      </nav>
-    </div>
-  )
-}
-
 function Home () {
   return <h2>Home</h2>;
 }
@@ -127,28 +69,42 @@ function Users () {
   return <h2>Users</h2>;
 }
 
+function Books () {
+  return <h2>Books</h2>;
+}
+
 // 没有匹配项目
-const NoMatch = ({ location }: ILocation) => (
-  <div>
-    <h3>
-      No match for <code>{location.pathname}</code>
-    </h3>
-  </div>
-);
+// const NoMatch = ({ location }: ILocation) => (
+//   <div>
+//     <h3>
+//       No match for <code>{location.pathname}</code>
+//     </h3>
+//   </div>
+// );
+
+function NoMatch () {
+  return <div>無數據</div>
+}
+
+
 
 
 export default function RootRouter () {
   return (
-    <>
       <Router>
-        <div className="app">
           <Switch>
-            <Route exact path="/" component={Layout} />
-            {/* <Home></Home> */}
-            {/* <Route component={NoMatch} /> */}
+            <Route path="/about" component={About}></Route>
+            <Route render={() => {
+              return <Layout>
+                <Switch>
+                  <Route exact path="/" component={Home}></Route>
+                  <Route path="/home" component={Home}></Route>
+                  <Route path="/users" component={Users}></Route>
+                  <Route path="/books" component={Books}></Route>
+                </Switch>
+              </Layout>
+            }} />
           </Switch>
-        </div>
       </Router>
-    </>
   );
 }

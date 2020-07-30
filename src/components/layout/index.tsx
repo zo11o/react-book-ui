@@ -1,14 +1,12 @@
-import React from 'react'
-import {Link} from 'react-router-dom'
+import React,{Component} from 'react'
+import Nav from '../nav'
 
-function Layout () {
-
-    return (
-        <ul>
-            <Link to="/home">你我他</Link>
-            <li>你我他</li>
-            <li>你我他</li>
-        </ul>
-    )
-}
+class Layout extends Component{
+    render (){
+      return (<nav className="layout-nav">
+        { this.props.children }
+        <Nav></Nav>
+      </nav>)
+    }
+  }
 export default Layout
