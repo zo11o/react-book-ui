@@ -57,7 +57,18 @@ export const withDefaultProps = <
 // );
 
 function Home () {
-  return <h2>Home</h2>;
+  return <div>
+  <p>only this paragraph will get the style :)</p>
+
+  { /* you can include <Component />s here that include
+       other <p>s that don't get unexpected styles! */ }
+
+  <style jsx>{`
+    p {
+      color: red;
+    }
+  `}</style>
+</div>;
 }
 
 
