@@ -55,7 +55,10 @@
 
 ## 期待技术实现
 
-* [ ] 前后端分离
+* [x] Typescript
+* [x] styled-jsx 动态模块化 JSX 样式解决方案
+* [x] 前后端分离
+* [ ] 数据 mock
 * [ ] JWT身份认证
 * [ ] 骨架屏
 * [ ] 全功能使用 React Hooks 开发

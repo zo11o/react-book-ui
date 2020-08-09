@@ -7,7 +7,6 @@ function List () {
     const handleClick = () => {
         list.push(2)
         setList(list)
-        console.log(22)
     }
 
     return (

@@ -1,0 +1,39 @@
+.navigator {
+
+}
+
+.navigator a {
+    display: inline-block;
+    width: 0.8rem;
+    height: 0.8rem;
+}
+
+.navigator .home{
+    background: url(../../assets/images/nav-home.svg) no-repeat 0 0;
+    background-size: 100%;
+}
+
+.navigator .home.active {
+    background: url(../../assets/images/nav-home-a.svg) no-repeat 0 0;
+    background-size: 100%;
+}
+
+.navigator .book{
+    background: url(../../assets/images/nav-book.svg) no-repeat 0 0;
+    background-size: 100%;
+}
+
+.navigator .book.active {
+    background: url(../../assets/images/nav-book-a.svg) no-repeat 0 0;
+    background-size: 100%;
+}
+
+.navigator .user{
+    background: url(../../assets/images/nav-user.svg) no-repeat 0 0;
+    background-size: 100%;
+}
+
+.navigator .user.active {
+    background: url(../../assets/images/nav-user-a.svg) no-repeat 0 0;
+    background-size: 100%;
+}

@@ -1,7 +1,7 @@
 import React, { SFC, ComponentType, Component } from "react";
 import { BrowserRouter as Router, Route, Redirect, Link, Switch, NavLink } from "react-router-dom";
 import Layout from '../components/layout'
-
+import Home from '../view/home'
 
 export const withDefaultProps = <
   P extends object,
@@ -56,31 +56,31 @@ export const withDefaultProps = <
 //   />
 // );
 
-function Home () {
-  return <div>
-  <p>only this paragraph will get the style :)</p>
+// function Home () {
+//   return <div>
+//   <p>only this paragraph will get the style :)</p>
 
-  { /* you can include <Component />s here that include
-       other <p>s that don't get unexpected styles! */ }
+//   { /* you can include <Component />s here that include
+//        other <p>s that don't get unexpected styles! */ }
 
-  <style jsx>{`
-    p {
-      color: red;
-    }
-  `}</style>
-</div>;
-}
+//   <style jsx>{`
+//     p {
+//       color: red;
+//     }
+//   `}</style>
+// </div>;
+// }
 
 
 function About () {
   return <h2>About</h2>;
 }
 
-function Users () {
+function User () {
   return <h2>Users</h2>;
 }
 
-function Books () {
+function Book () {
   return <h2>Books</h2>;
 }
 
@@ -97,9 +97,6 @@ function NoMatch () {
   return <div>無數據</div>
 }
 
-
-
-
 export default function RootRouter () {
   return (
       <Router>
@@ -110,8 +107,8 @@ export default function RootRouter () {
                 <Switch>
                   <Route exact path="/" component={Home}></Route>
                   <Route path="/home" component={Home}></Route>
-                  <Route path="/users" component={Users}></Route>
-                  <Route path="/books" component={Books}></Route>
+                  <Route path="/user" component={User}></Route>
+                  <Route path="/book" component={Book}></Route>
                 </Switch>
               </Layout>
             }} />
