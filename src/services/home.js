@@ -3,6 +3,6 @@ import R from './request'
 
 export default {
     getList() {
-        R.get('/home/getList')
+        R.post('/api/v2/topics')
     }
 }

@@ -9,7 +9,7 @@ module.exports = override(
         //如果安装这个了，则支持jsx加上less的写法
       [
         "styled-jsx/babel",
-        { "plugins": ["styled-jsx-plugin-less"] }
+        // { "plugins": ["styled-jsx-plugin-less"] }
       ]
     ),
     fixBabelImports("import", {

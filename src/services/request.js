@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const baseURL = 'http://localhost:3001/';
+const baseURL = 'http://localhost:7001';
 
 axios.interceptors.request.use(function(config) {
     console.log(config);
@@ -29,8 +29,16 @@ var R = {
                 })
         })
     },
-    post: function() {
-
+    post: function(url, params, config) {
+        return new Promise((resolve, reject) => {
+            axios.post(`${baseURL}${url}`, params)
+                .then((response) => {
+                    resolve(resolve);
+                })
+                .catch((error) =>{
+                    reject(error);
+                })
+        })
     },
     delete: function () {
 
