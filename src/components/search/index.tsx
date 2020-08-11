@@ -1,15 +1,17 @@
-import React, { useState, useCallback, useEffect } from 'react'
+import React from 'react'
 import styles from './styles'
 
-function Search(props) {
+function Search(props: any) {
     console.log(props);
     return (<div className={'search-components'}>
         <div className="search-wrap">
-            <i></i>
-            <input></input>
-            <i></i>
+            <i className="i search"></i>
+            <input className="input"></input>
+            <i className="i scan"></i>
         </div>
-        {props.right}
+        <div className="search-right">
+            {props.right}
+        </div>
         <style jsx>{styles}</style>
     </div>)
 }

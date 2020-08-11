@@ -1,5 +1,5 @@
-import React, { SFC, ComponentType, Component } from "react";
-import { BrowserRouter as Router, Route, Redirect, Link, Switch, NavLink } from "react-router-dom";
+import React, { ComponentType } from "react";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Layout from '../components/layout'
 import Home from '../view/home'
 
@@ -93,9 +93,9 @@ function Book () {
 //   </div>
 // );
 
-function NoMatch () {
-  return <div>無數據</div>
-}
+// function NoMatch () {
+//   return <div>無數據</div>
+// }
 
 export default function RootRouter () {
   return (

@@ -22,7 +22,7 @@ export default function Nav () {
 
 
   return (
-    <nav className="navigator">
+    <nav className="navigator-components">
       <ul>
         <li><NavLink to="/home" className="home"></NavLink></li>
         <li><NavLink to="/book" className="book"></NavLink></li>
