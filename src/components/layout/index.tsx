@@ -1,7 +1,7 @@
 import React,{Component} from 'react'
 import Nav from '../nav'
-import styles from './styles';
-
+// import styles from './styles';
+import './index.css'
 class Layout extends Component{
     render (){
       return (<div className="layout">
@@ -11,7 +11,7 @@ class Layout extends Component{
         <div className="layout-footer">
           <Nav></Nav>
         </div>
-        <style jsx>{styles}</style>
+        {/* <style jsx={true} global={true}>{styles}</style> */}
       </div>)
     }
   }

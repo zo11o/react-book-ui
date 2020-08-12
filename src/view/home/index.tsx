@@ -1,6 +1,6 @@
 import React from 'react'
 // import services from '../../services';
-import Search from '../../components/search'
+import SearchBar from '../../components/search-bar'
 import { btn } from './styles'
 import ListView from '../../components/list-view'
 
@@ -22,11 +22,13 @@ const list = [{
     publish: '2011-09-01'
 }]
 
+const HOT = ['爱的谱曲', '洗衣机', '人的一生', '生活', '来到这个世界', '静', '人与狗', '生命不可承受之轻', '天下为公',]
+
+
 function Home () {
     return <div className="home-page">
-        <Search right={<ClassBtn />}></Search>
+        <SearchBar right={<ClassBtn />} hot={HOT || []}></SearchBar>
         {/* TODO: 轮播图组件 */}
-
         {/* TODO: 如果有时间希望做长列表组件 */}
         <ListView source={list}></ListView>
     </div>

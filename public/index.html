@@ -182,14 +182,21 @@
         '>' + '<' + '/' + 'script>');
     }
   </script>
-  <script src="http://g.tbcdn.cn/mtb/lib-flexible/0.3.2/??flexible_css.js,flexible.js"
-  ></script>
+  <script src="http://g.tbcdn.cn/mtb/lib-flexible/0.3.2/??flexible_css.js,flexible.js"></script>
 </head>
 
 <body>
   <noscript>You need to enable JavaScript to run this app.</noscript>
   <div id="root"></div>
+  <!-- <script src="https://cdn.bootcdn.net/ajax/libs/fastclick/1.0.6/fastclick.js"></script> -->
   <script>
+
+    // if ('addEventListener' in document) {
+    //   document.addEventListener('DOMContentLoaded', function () { 
+    //     FastClick.attach(document.body)
+    //    })
+    // }
+
     try {
       let cumulativeLayoutShiftScore = 0;
 
