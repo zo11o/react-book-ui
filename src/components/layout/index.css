@@ -7,11 +7,11 @@
 .layout .layout-content {
     flex: 1;
     width: 100%;
-    height: auto;
     overflow-y: scroll;
     -webkit-overflow-scrolling: touch;
 }
 
-/* .layout .layout-footer {
+.layout .layout-footer {
     box-shadow: -1px -1px #eee;
-} */
+    height: 6vh;
+}

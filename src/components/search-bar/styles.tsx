@@ -6,12 +6,10 @@ export default css`
         0$ {width: 80%;}
         100% {width: 100%;}
     }
-
     .search-components {
         display: flex;
         flex-direction: column;
     }
-
     .search-components .search-header {
         display: flex;
         padding: .4rem .6rem;

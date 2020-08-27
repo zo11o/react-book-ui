@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef, ReactElement } from 'react'
 import styles from './styles'
+import utils from '../../utils'
 
 enum ClassType {
     HOT = 'hot',
@@ -14,19 +15,21 @@ const HISTORY = ['你好', '我好', '大家好', '才是真的好', '才是真�
 function SearchBar (props: IProps) {
     const { hot } = props;
 
+    console.log(utils.cookie.get('2'))
+
     let [keywords, setKeywords] = useState('');
-    let [isFocus, setFocus] = useState(false);
+    let [isFocus, setVisible] = useState(false);
     let [historyActive, setHistory] = useState(-1);
     let [hotActive, setHot] = useState(-1);
 
     const inputEl = useRef<HTMLInputElement | null>(null);
 
     const handleFocus = () => {
-        setFocus(true)
+        setVisible(true)
     }
 
     const handleBlur = () => {
-        setFocus(false)
+        setVisible(false)
     }
 
     const handleSelect = (i: number, type: Array<any>) => {
@@ -36,10 +39,10 @@ function SearchBar (props: IProps) {
 
     const handleHistorySelect = (i: number) => {
         // 这里引入推荐算法 LRU
-        // setKeywords(HISTORY[i]); 
+        setKeywords(HISTORY[i]);
         setHistory(i);
         if (null !== inputEl.current) {
-            // inputEl.current.focus();
+            inputEl.current.focus();
             inputEl.current.value = HISTORY[i]
         }
     }
@@ -48,7 +51,7 @@ function SearchBar (props: IProps) {
         <div className="search-header">
             <div className={`search-wrap ${isFocus ? 'active' : ''}`}>
                 <i className="i search"></i>
-                <input ref={inputEl} defaultValue={keywords} className="input" onFocus={handleFocus} onBlur={handleBlur}></input>
+                <input ref={inputEl} defaultValue={keywords} className="input" onFocus={handleFocus}></input>
                 <i className="i scan"></i>
             </div>
             {
@@ -77,9 +80,6 @@ function SearchBar (props: IProps) {
                 </div>
                 : ''
         }
-
-
-
         <style jsx>{styles}</style>
     </div>)
 }
